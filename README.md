@@ -1,2 +1,2 @@
 # clojure-error-message-catalog
-a catalog of common Clojure errors and what their meaning
+a catalog of common Clojure errors and their meanings
