@@ -33,7 +33,7 @@ For example, let's say we have the following namespace:
           :stop (conman/disconnect! *db*))
 ```
 
-The `:start` function has to be run to bind a new databse connection to the `*db*`.
+The `:start` function has to be run to bind a new database connection to the `*db*`.
 When we try to access `*db*` _before_ `:start` has been run, the above exception will occur.
 
 ### Solutions

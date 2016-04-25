@@ -4,9 +4,9 @@ a catalog of common Clojure errors and their meanings
 
 ## We need your errors!
 
-This catalog is community driven, hence _your_ contribution to this is invaluable.
+This catalog is community driven, hence _your_ contribution to this is _invaluable_.
 
-It is very simple to contribute / share errors / exceptions, causes and possible solutions.
+It is very simple to contribute / share errors, exceptions, causes and possible solutions.
 There are 3 main sections of the catalog:
 
 #### 1. Clojure errors
@@ -26,11 +26,12 @@ There are 3 main sections of the catalog:
 
 ### How to submit a new error
 
-In order to contribute, please check that the error is not already in the catalog, if it is and you need to add / change anything, just send a pull request.
+In order to contribute, please check that the error is not already in the catalog.
+If it is and you need to add / change anything, just send a pull request.
 
 #### Error file name
 
-Errors are subitted as markdown files (i.e. `.md`). The file name would be very close to the `cause`.
+Errors are submitted as markdown files (i.e. `.md`). The file name would be very close to the `cause`.
 
 For example, let's take an exception:
 
@@ -43,7 +44,7 @@ So something like `derefablestate-cannot-be-cast-to-ifn.md` would be a great, de
 
 #### What is in the error file?
 
-Would be really helpfult to have all three in the error file:
+Would be really helpful to have all three in the error file:
 
 * Error message
 * Cause
@@ -60,7 +61,17 @@ since it is caused by the `library` that is called `mount`.
 
 In case the error is Clojure core related, place is under [clj](clj/).
 
-ClojureScript _core_ related errors would go under [cljs](cljs/)
+ClojureScript _core_ related errors would go under [cljs](cljs/).
+
+-
+
+So the steps to contribute are:
+
+* [fork](https://help.github.com/articles/fork-a-repo/) this repo
+* Once the error file is ready to be contributed, just [send a pull request](https://help.github.com/articles/creating-a-pull-request/) to the repo.
+
+In case you have any questions, suggestions, please let us know via [opening an issue](https://github.com/yogthos/clojure-error-message-catalog/issues) or
+pinging us on [clojurian slack](http://clojurians.net/) (@yogthos, @tolitius).
 
 ## License
 
