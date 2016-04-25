@@ -1,83 +1,69 @@
-# clojure-error-message-catalog
+# Clojure Error Message Catalog
+
 a catalog of common Clojure errors and their meanings
 
-## Attempting to use a component that hasn't been started
+## We need your errors!
 
-### Error message
+This catalog is community driven, hence _your_ contribution to this is invaluable.
 
-```
-#object[mount.core.DerefableState 0x52691944 {:status :failed, :val #error { 
+It is very simple to contribute / share errors / exceptions, causes and possible solutions.
+There are 3 main sections of the catalog:
+
+#### 1. Clojure errors
+
+* Live under [clj](clj/) 
+* Here we collect all Clojure _core_ errors: i.e. errors that are raised from/by Clojure itself.
+
+#### 2. ClojureScript errors
+
+* Live under [cljs](cljs/) 
+* Here we collect all ClojureScript _core_ errors: i.e. errors that are raised from/by ClojureScript itself.
+
+#### 3. Library errors
+
+* Live under [lib](lib/)
+* Here we collect all errors that are raised from/by any Clojure / ClojureScript _library_ (Ring, Compojure, your library, etc..)
+
+### How to submit a new error
+
+In order to contribute, please check that the error is not already in the catalog, if it is and you need to add / change anything, just send a pull request.
+
+#### Error file name
+
+Errors are subitted as markdown files (i.e. `.md`). The file name would be very close to the `cause`.
+
+For example, let's take an exception:
+
+```clojure
+#object[mount.core.DerefableState 0x52691944 {:status :failed, :val #error {
 :cause "mount.core.DerefableState cannot be cast to clojure.lang.IFn"
 ```
 
-### Cause
+So something like `derefablestate-cannot-be-cast-to-ifn.md` would be a great, descriptive file name for this error.
 
-The above error happens when you try to access a variable defined using `mount.core/defstate`
-before the `:start` hook has been called. Mount will not automatically start states in namespaces
-that are not referenced anywhere in the project.
+#### What is in the error file?
 
-For example, let's say we have the following namespace:
+Would be really helpfult to have all three in the error file:
 
-```clojure
-(ns guestbook.db.core
-  (:require
-    [conman.core :as conman]
-    [mount.core :refer [defstate]]
-    [guestbook.config :refer [env]]))
+* Error message
+* Cause
+* Solution(s)
 
-(defstate ^:dynamic *db*
-          :start (conman/connect!
-                   {:datasource
-                    (doto (org.sqlite.SQLiteDataSource.)
-                          (.setUrl (env :database-url)))})
-          :stop (conman/disconnect! *db*))
-```
+For example [derefablestate-cannot-be-cast-to-ifn.md](lib/mount/derefablestate-cannot-be-cast-to-ifn.md)
 
-The `:start` hook has to be run before the `*db*` var is populated with the connection.
-When we try to access the var before `:start` has been run, the above exception will occur.
+#### Where to place the file?
 
-### Solutions
+Since there 3 main sections ([clj](clj/) / [cljs](cljs/) / [lib](/lib)) place it under the section that matches the nature of the error.
 
-* Reference the namespace in a different namespace in the project, e.g:
+For example the above error ("mount.core.DerefableState cannot be cast to clojure.lang.IFn") would live under [lib/mount/](lib/mount/)
+since it is caused by the `library` that is called `mount`.
 
-```clojure
-(ns guestbook.routest.services
-  (:require [guestbook.db.core :as db]
-            ...))
-```
+In case the error is Clojure core related, place is under [clj](clj/).
 
-* manually load the namespace and start the state in the REPL:
- 
-```clojure
-(require '[guestbook.db.core :as db])
-(mount.core/start db/*db*)
-```
+ClojureScript _core_ related errors would go under [cljs](cljs/)
 
-# Working with higher order functions
+## License
 
-## Wrong argument order for iterators
+Copyright © 2016 Clojure Community
 
-### Error Message
-
-```
-java.lang.IllegalArgumentException: Don't know how to create ISeq from: ...
-```
-
-### Cause
-
-The above error indicates that we're trying to iterate over something that does not implement the `ISeq` interface.
-This error is often caused by passing the arguments in the wrong order to higher order functions such as
-`map`, `filter`, and `reduce`, e.g:
-
-```clojure
-(map [1 2 3] inc)
-```
-
-### Solutions
-
-Check that the function is passed the arguments in the correct order:
-
-```clojure
-(map inc [1 2 3])
-```
-
+Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
