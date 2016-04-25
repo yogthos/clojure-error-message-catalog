@@ -54,12 +54,12 @@ For example [derefablestate-cannot-be-cast-to-ifn.md](lib/mount/derefablestate-c
 
 #### Where to place the file?
 
-Since there 3 main sections ([clj](clj/) / [cljs](cljs/) / [lib](/lib)) place it under the section that matches the nature of the error.
+Since there are 3 main sections ([clj](clj/) / [cljs](cljs/) / [lib](/lib)) place it under the section that matches the nature of the error.
 
-For example the above error ("mount.core.DerefableState cannot be cast to clojure.lang.IFn") would live under [lib/mount/](lib/mount/)
+For example the above error (`"mount.core.DerefableState cannot be cast to clojure.lang.IFn"`) would live under [lib/mount/](lib/mount/)
 since it is caused by the `library` that is called `mount`.
 
-In case the error is Clojure core related, place is under [clj](clj/).
+In case the error is Clojure _core_ related, place is under [clj](clj/).
 
 ClojureScript _core_ related errors would go under [cljs](cljs/).
 
