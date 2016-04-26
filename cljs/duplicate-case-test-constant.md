@@ -14,12 +14,14 @@ The above error happens when you declare two overloads of a function with the sa
 For example, let's say we have the following function:
 
 ```clojure
-(defn twice-plus 
-  ([x] (twice-plus x 0))
-  ([x extra] (+ x x extra)))
+(defn twice
+  ([x] (twice x false))
+  ([x log?]
+    (when log? (println "Doubling" x))
+    (+ x x)))
 ```
 
-We decide we no longer want to support the second param (and choose to rename the function accordingly), but we forget to remove the first overload:
+We decide we no longer want to support the second param, but we forget to remove the first overload:
 
 ```clojure
 (defn twice 
