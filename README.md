@@ -2,6 +2,16 @@
 
 a catalog of common Clojure errors and their meanings
 
+## What is it?
+
+We are experimenting with starting a community driven catalog of common errors. The main categories will be [Clojure](clj/), [ClojureScript](cljs/) and [libraries](/lib). 
+
+The idea is that people can submit an issue with a particular error, or make a pull request with the error, description and hopefuly one or two solutions to resolve it.
+
+Eventually, the plan would be to create a site where you could paste errors and search for them that way, but it would make sense to start with a GitHub repo to see if there's interest. Hopefully, this will also help identify the most common errors people have trouble with and make error reporting better in Clojure itself.
+
+This project was inspired by the way [Elm does this](https://github.com/elm-lang/error-message-catalog), where they have a repo for this purpose, and then provide custom compiler errors for these cases.
+
 ## We need your errors!
 
 This catalog is community driven, hence _your_ contribution to this is _invaluable_.
