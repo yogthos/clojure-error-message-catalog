@@ -10,9 +10,10 @@ UnsupportedOperationException nth not supported on this type: ...
 
 ### Cause
 
-The above error indicates that clojure is calling nth on something that clojure does not implement nth for e.g. a keyword.
+The above error indicates that Clojure is calling `nth` on a value that does not implement `nth` e.g. a keyword.
+
 Generally this error is seen when we destructure something that is not a collection, e.g. if we have supplied the wrong arguments 
-to the function e.g.
+to the function:
 
 ```clojure
 (defn destructure-fn [[a b] num] 
@@ -28,7 +29,7 @@ OR
       a)
 ```
 
-This error may also be seen directly by calling nth directly on something that does not support nth:
+This error may also be seen directly by calling `nth` directly on something that does not support `nth`:
 
 ``` clojure
 (nth :keyword 0)
@@ -36,10 +37,16 @@ This error may also be seen directly by calling nth directly on something that d
 
 ### Solutions
 
-Supply the correct destructurable type to the function or binding.
-
+Supply a sequence or string to the function or binding:
 
 ```clojure
-(let [[a b] [1 2]] 
-      a)
+(let [[x y] '(1 2 3)]
+  x)
+;; 1
+(let [[x y] [1 2 3]]
+  x)
+;; 1
+(let [[x y] "abc"]
+  x)
+;; \a
 ```
