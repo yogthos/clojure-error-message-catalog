@@ -34,12 +34,12 @@ There are 3 main sections of the catalog:
 * Live under [lib](lib/)
 * Here we collect all errors that are raised from/by any Clojure / ClojureScript _library_ (Ring, Compojure, your library, etc..)
 
-### How to submit a new error
+## How to submit a new error
 
 In order to contribute, please check that the error is not already in the catalog.
 If it is and you need to add / change anything, just send a pull request.
 
-#### Error file name
+### Error file name
 
 Errors are submitted as markdown files (i.e. `.md`). The file name would be very close to the `cause`.
 
@@ -52,17 +52,45 @@ For example, let's take an exception:
 
 So something like `derefablestate-cannot-be-cast-to-ifn.md` would be a great, descriptive file name for this error.
 
-#### What is in the error file?
+### Error file format
 
 Would be really helpful to have all three in the error file:
 
 * Error message
 * Cause
-* Solution(s)
+* Solutions
 
-For example [derefablestate-cannot-be-cast-to-ifn.md](lib/mount/derefablestate-cannot-be-cast-to-ifn.md)
+Share a file that describes these sections in a  [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format:
 
-#### Where to place the file?
+```
+## [Title]
+
+### Error Message
+...
+
+### Cause
+...
+
+### Solutions
+
+#### [Title of solution 1]
+...
+
+#### [Title of solution 2]
+...
+
+;; etc.
+```
+
+i.e. in case there is more than one solution, just list all of them under the `Solutions` section.
+
+#### Why the "format"?
+
+Following this format / guideline allows this error catalog to be processed into a format that can be also _readable by programs_ (i.e. not just us, humans). Which enables great things like [contextual search] (https://en.wikipedia.org/wiki/Contextual_searching), IDE/tooling integration for suggestions, etc.
+
+Check out [this error file](lib/mount/derefablestate-cannot-be-cast-to-ifn.md) to visualize the required format.
+
+### Where to place the file?
 
 Since there are 3 main sections ([clj](clj/) / [cljs](cljs/) / [lib](/lib)) place it under the section that matches the nature of the error.
 
