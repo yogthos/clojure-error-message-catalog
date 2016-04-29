@@ -38,7 +38,7 @@ When we try to access `*db*` _before_ `:start` has been run, the above exception
 
 ### Solutions
 
-* Reference the namespace in a different namespace in the project, e.g:
+#### Reference the namespace in a different namespace in the project
 
 ```clojure
 (ns guestbook.routest.services
@@ -49,7 +49,7 @@ When we try to access `*db*` _before_ `:start` has been run, the above exception
 Depends on where `(mount/start)` is called, if it knows `guestbook.routest.services`,
 it will also know (and hence will start) `guestbook.db.core/*db*`.
 
-* manually load the namespace and start the state in the REPL:
+#### Manually load the namespace and start the state in the REPL
  
 ```clojure
 (require '[guestbook.db.core :as db])
