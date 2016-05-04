@@ -54,7 +54,7 @@ So something like `derefablestate-cannot-be-cast-to-ifn.md` would be a great, de
 
 ### Error file format
 
-Would be really helpful to have all three in the error file:
+Would be really helpful to have the following in the error file:
 
 * Exception
 * Description of the exception

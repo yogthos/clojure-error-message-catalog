@@ -34,5 +34,3 @@ Make sure you're using the `{...}` parens when creating the map:
 ```clojure
 {:first-name "Bob", :last-name "Bobberton"}
 ```
-
-
