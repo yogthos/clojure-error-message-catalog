@@ -4,7 +4,7 @@ a catalog of common Clojure errors and their meanings
 
 ## What is it?
 
-We are experimenting with starting a community driven catalog of common errors. The main categories will be [Clojure](clj/), [ClojureScript](cljs/) and [libraries](/lib). 
+We are experimenting with starting a community driven catalog of common errors. The main categories will be [Clojure](clj/), [ClojureScript](cljs/) and [libraries](/lib).
 
 The idea is that people can submit an issue with a particular error, or make a pull request with the error, description and hopefuly one or two solutions to resolve it.
 
@@ -21,12 +21,12 @@ There are 3 main sections of the catalog:
 
 #### 1. Clojure errors
 
-* Live under [clj](clj/) 
+* Live under [clj](clj/)
 * Here we collect all Clojure _core_ errors: i.e. errors that are raised from/by Clojure itself.
 
 #### 2. ClojureScript errors
 
-* Live under [cljs](cljs/) 
+* Live under [cljs](cljs/)
 * Here we collect all ClojureScript _core_ errors: i.e. errors that are raised from/by ClojureScript itself.
 
 #### 3. Library errors
@@ -41,7 +41,7 @@ If it is and you need to add / change anything, just send a pull request.
 
 ### Error file name
 
-Errors are submitted as markdown files (i.e. `.md`). The file name would be very close to the `cause`.
+Errors are submitted as markdown files (i.e. `.md`). The file name would be very close to the exception.
 
 For example, let's take an exception:
 
@@ -56,45 +56,34 @@ So something like `derefablestate-cannot-be-cast-to-ifn.md` would be a great, de
 
 Would be really helpful to have all three in the error file:
 
-* Error message
-* Cause
+* Exception
+* Description of the exception
+* Common cause(s)
 * Solutions
 
 Share a file that describes these sections in a  [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format:
 
 ```
-## [Title]
-
-### Error Message
+## Title: Exception message
+### Description: general description of the exception
+### Cause 1: Cause title
+### Solution 1
 ...
-
-### Cause
-...
-
-### Solutions
-
-#### [Title of solution 1]
-...
-
-#### [Title of solution 2]
-...
-
-;; etc.
+### Cause n: cause n title
+### Solution n
 ```
-
-i.e. in case there is more than one solution, just list all of them under the `Solutions` section.
 
 #### Why the "format"?
 
 Following this format / guideline allows this error catalog to be processed into a format that can be also _readable by programs_ (i.e. not just us, humans). Which enables great things like [contextual search] (https://en.wikipedia.org/wiki/Contextual_searching), IDE/tooling integration for suggestions, etc.
 
-Check out [this error file](lib/mount/derefablestate-cannot-be-cast-to-ifn.md) to visualize the required format.
+Check out [this error file](lib/clj/java-lang-boolean-cannot-be-cast-to-clojure-lang-symbol.md) to visualize the required format.
 
 ### Where to place the file?
 
 Since there are 3 main sections ([clj](clj/) / [cljs](cljs/) / [lib](/lib)) place it under the section that matches the nature of the error.
 
-For example the above error (`"mount.core.DerefableState cannot be cast to clojure.lang.IFn"`) would live under [lib/mount/](lib/mount/)
+For example the error (`"mount.core.DerefableState cannot be cast to clojure.lang.IFn"`) would live under [lib/mount/](lib/mount/)
 since it is caused by the `library` that is called `mount`.
 
 In case the error is Clojure _core_ related, place is under [clj](clj/).
