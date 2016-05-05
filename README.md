@@ -100,6 +100,10 @@ So the steps to contribute are:
 In case you have any questions, suggestions, please let us know via [opening an issue](https://github.com/yogthos/clojure-error-message-catalog/issues) or
 pinging us on [clojurian slack](http://clojurians.net/) (@yogthos, @tolitius).
 
+### Website
+
+The very beginnings of a website where people can browse and search the error repo, and submit new errors, is [here](https://github.com/eggsyntax/clojure-error-website). Contributions to the website are also extremely welcome. It's currently planned to be a very simple static website.
+
 ## License
 
 Copyright © 2016 Clojure Community
