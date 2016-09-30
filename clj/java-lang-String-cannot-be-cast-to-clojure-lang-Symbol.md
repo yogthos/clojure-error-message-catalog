@@ -21,6 +21,7 @@ Go back and check your project.clj
 ### solution
 
 change the :main section to symbol
+
 ```clojure
-:main 'demo.core
+:main demo.core
 ```
