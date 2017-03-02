@@ -10,7 +10,7 @@ Exception in thread "main" java.lang.ClassCastException: java.lang.String cannot
 
 It is highly recommended to do really small changes of `project.clj`.
 
-### Cause: defproject main shuold be a symbol
+### Cause: defproject main should be a symbol
 
 Go back and check your project.clj
 
