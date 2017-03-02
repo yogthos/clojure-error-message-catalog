@@ -1,4 +1,4 @@
-## IllegalArgumentException Parameter declaration "+" should be a vector 
+## IllegalArgumentException Parameter declaration should be a vector
 
 ### Description
 
@@ -14,7 +14,7 @@ small. Here is an example:
 (defn my-static-adder
   "This is my-static-adder function which will simply add
 two built-in numbers. Nothing spectacular, just to demonstrate
-how easy is to miss argument vector."  
+how easy is to miss argument vector."
   (+ 1 2))
 ```
 
@@ -32,7 +32,7 @@ Add argument vector.
 (defn my-static-adder
   "This is my-static-adder function which will simply add
 two built-in numbers. Nothing spectacular, just to demonstrate
-how easy is to miss argument vector."  
+how easy is to miss argument vector."
   []
   (+ 1 2))
 ```
