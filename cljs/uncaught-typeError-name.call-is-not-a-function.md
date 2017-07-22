@@ -18,7 +18,7 @@ For example:
 
 ```clojure
 (defn display-name [{:keys [person/name]}]
-  (str (name :person/name) ": " name)))
+  (str (name :person/name) ": " name))
 ```
 
 Attempting to use `name` on the `:person/name` keyword will throw `Uncaught
@@ -31,5 +31,5 @@ Don't shadow core functions. The above example could be re-written as:
 
 ```clojure
 (defn display-name [{person-name :person/name}]
-  (str (name :person/name) ": " person-name)))
+  (str (name :person/name) ": " person-name))
 ```
