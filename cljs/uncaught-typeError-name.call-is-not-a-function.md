@@ -31,5 +31,5 @@ Don't shadow core functions. The above example could be re-written as:
 
 ```clojure
 (defn display-name [{person-name :person/name}]
-  (str (name :person/name) ": " person-name)))
+  (str (name :person/name) ": " person-name))
 ```
