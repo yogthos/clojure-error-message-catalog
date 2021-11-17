@@ -55,3 +55,15 @@ it will also know (and hence will start) `guestbook.db.core/*db*`.
 (require '[guestbook.db.core :as db])
 (mount.core/start db/*db*)
 ```
+#### Wrap your expression in a function or comment
+
+Check your code for some unwrapped expressions like the following:
+
+```clojure
+(ns guestbook.routest.services
+  (:require [guestbook.db.core :as db]
+            ...))
+(db/get-user {:id 1}) ;=> {:id 1, :name "demo", ...}
+```
+
+A solution is to wrap this expression in a function or a [`comment`](https://clojuredocs.org/clojure.core/comment) macro.
